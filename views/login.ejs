@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+
+    <title>เข้าสู่ระบบ</title>
+
+
+</head>
+<script>
+
+</script>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>เข้าสู่ระบบ</center>
+
+            </div>
+            <br>
+            <form method="POST" action="/login">
+                <p class="login">
+                    <img class="user2" src="user.png">
+                    ชื่อผู้ใช้ : <input id="user" name="user" type="text" maxlength="20" required>
+                    <br>
+                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    รหัสผ่าน : <input type="password" id="password" name="password" maxlength="20" required>
+                    
+                </p>
+                <span style="color: red"><%= error %></span>
+
+                <p class="login3">
+                    <a href="/manageUser"><u>ลืมรหัสผ่าน</u></a>
+                </p>
+
+                <p class="login2">
+                    <button class="btnAll" type="button" href="/register">
+                        <a class="aa" href="/register">สมัครสมาชิก</a>
+                    </button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button type="submit" class="btnAll">
+                        <u>ยื่นยัน</u>
+                    </button>
+                </p>
+            </form>
+            <br>
+
+        </div>
+    </section>
+</body>
+
+</html>

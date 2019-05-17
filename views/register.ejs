@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <title>สมัครสมาชิก</title>
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script type="text/javascript" src="register.js"></script>
+    <!--font-->
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>สมัครสมาชิก</center>
+            </div>
+            
+            <form id="addEmployee" method="post" action="/register">
+                <div class="row">
+                    <div class="columnPass">
+                        <p class="rigth">
+                            ชื่อ : <input id="name" name="name" type="text" size="18" onkeyup="checkInputName()"
+                                onkeypress="checkInputName()" required><br><br>
+                            นามสกุล : <input id="lastname" name="lastname" type="text" size="18"
+                                onkeyup="checkInputFname()" onkeypress="checkInputFname()" required><br><br>
+                            เพศ : <select id="gender" name="gender" style="width: 160px" required>
+                                <option disabled selected hidden>เลือก...</option>
+                                <option value="ชาย">ชาย</option>
+                                <option value="หญิง">หญิง</option>
+                            </select><br><br>
+                            วัน/เดือน/ปี เกิด : <input id="birth" name="birth" type="date" required><br><br>
+                            เบอร์โทร : <input id="phone" name="phoneNumber" type="tel" maxlength="10" size="18"
+                                onkeyup="checkInputTel()" onkeypress="checkInputTel()" required><br><br>
+                            <!-- ตำแหน่ง : <input id="type" name="type" type="text" size="18" required><br><br> -->
+                            ตำแหน่ง : <select id="type" name="type" style="width: 160px" required>
+                                    <option disabled selected hidden>เลือก...</option>
+                                    <option value="พนักงานขาย">พนักงานขาย</option>
+                                    <option value="พนักงานซื้อ">พนักงานซื้อ</option>
+                                </select><br><br>
+                            ชื่อผู้ใช้ : <input id="user" name="user" type="text" size="18" required><br><br>
+                            รหัสผ่าน : <input id="password" name="password" name="password" type="password" size="18"
+                                required><br>
+
+                        </p>
+                    </div>
+                </div>
+                <span style="color: red"><%= error %></span>
+            </form>
+            <p class="login2">
+                <button type="button" class="btnAll" onclick="backLogin()"><a class="aa"
+                        href="/login">ยกเลิก</a></button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="btnAll" onclick="checkRegis()"><u>ยืนยัน</u></button>
+            </p>
+
+            <br>
+    </section>
+    </head>
+</body>
+
+</html>
