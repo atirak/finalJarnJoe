@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 const OrderSale = new Schema({
     
     ID_OrderSale: { type: Number },
-    ID_CarStock: { type: Number },
+    ID_CarStock: { type: String },
     date: { type: String },
     price: { type: Number },
     ID_Customer: { type: Number },
