@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://login:login123@ds062818.mlab.com:62818/autoosell');
+mongoose.connect('mongodb://projectweb:p12345@ds117806.mlab.com:17806/choktaweeauto');
 
 const showSaleIncomeRouter = require('./routes/showSaleIncomeRouter');
 const profitDocumentRouter = require('./routes/profitDocumentRouter');
