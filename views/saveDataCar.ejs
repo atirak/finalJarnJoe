@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <script src="myJS2.js"></script>
+    <link rel="stylesheet" type="text/css" href="web.css">
+
+    <title>บันทึกข้อมูลรถ</title>
+
+    <script>
+        function nextBargainBuy() {
+            location.href = "/welcome";
+        }
+        function clearData() {
+            window.location.reload();
+        }
+    </script>
+</head>
+<body>
+        <form method="post" id="form" action="/saveDataCar/post/">
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>บันทึกข้อมูลรถ</center>
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="column1">
+                    ยี่ห้อ : <input type="text"  id="brand" name="brand" > <br><br>
+                    รุ่น : <input type="text" id="generation" name="generation"> <br><br>
+                    เลขทะเบียน : <input type="text" id="licensePlate" name="licensePlate"> <br><br>
+                    ราคา : <input type="text" id="price" name="price"> <br><br>
+
+                </div>
+
+                <div class="column2 ">
+                    วันที่รับรถ : <input type="date" name="bday" id="datereceive" name="datereceive" ><br><br>
+                    สี : <select id="color" name="color" >
+                        <option value="">เลือก</option>
+                        <option value="สีขาว">ขาว</option>
+                        <option value="สีดำ">ดำ</option>
+                        <option value="สีแดง">แดง</option>
+                        <option value="สีน้ำเงิน">น้ำเงิน</option>
+                        <option value="สีเลือง">เหลือง</option>
+                        <option value="สีเทา">เทา</option>
+                        <option value="สีเขียว">เขียว</option>
+                        <option value="สีส้ม">ส้ม</option>
+                    </select> <br><br>
+                    ปีของรถ : <select id="yearofcar" name="yearofcar">
+                        <option value=""> ค.ศ. </option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2016">2016</option>
+                        <option value="2015">2015</option>
+                        <option value="2014">2014</option>
+                        <option value="2013">2013</option>
+                        <option value="2012">2012</option>
+                        <option value="2011">2011</option>
+                        <option value="2010">2010</option>
+                        <option value="2009">2009</option>
+                        <option value="2008">2008</option>
+                        <option value="2007">2007</option>
+                        <option value="2006">2006</option>
+                        <option value="2005">2005</option>
+                        <option value="2004">2004</option>
+                        <option value="2003">2003</option>
+                        <option value="2002">2002</option>
+                        <option value="2001">2001</option>
+                        <option value="2000">2000</option>
+                        <option value="1999">1999</option>
+                        <option value="1998">1998</option>
+                        <option value="1997">1997</option>
+                        <option value="1996">1996</option>
+                        <option value="1995">1995</option>
+                        <option value="1994">1994</option>
+                        <option value="1993">1993</option>
+                        <option value="1992">1992</option>
+                        <option value="1991">1991</option>
+                    </select> <br><br><br>
+                </div>
+            </div>
+
+            
+
+            <br>
+            <div style="float: right">
+                <input type="button" class="btnAll" onclick="clearData()" value="ลบใหม่ทั้งหมด">
+                <button type="button" class="btnAll" onclick="checkAll()" >บันทึก</button>
+            </div>
+            <br><br>
+
+        </div>
+    </section>
+    </form>
+</body>
+
+</html>
