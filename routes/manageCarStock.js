@@ -1,15 +1,15 @@
 const express = require('express');
 const app = express();
 const CoinRouter = express.Router();
-const Coin = require('../models/OrderSale.model');
+const Coin = require('../models/TRN_CarStock.model');
 
 CoinRouter.route('/').get(function (req, res) {
-   Coin.find(function (err, OrderSale){
+   Coin.find(function (err, TRN_CarStock){
       if(err){
         console.log(err);
       }
       else {
-        res.render('showSaleIncome', {OrderSale: OrderSale});
+        res.render('manageCarStock', {car: TRN_CarStock});
         // console.log(build)
       }
     });

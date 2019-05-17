@@ -30,7 +30,8 @@ const registerRouter = require('./routes/registerRouter');
 const taxInvoiceLicenseRouter = require('./routes/taxInvoiceLicenseRouter');
 const taxInvoiceRepairRouter = require('./routes/taxInvoiceRepairRouter');
 const taxInvoiceSaleRouter = require('./routes/taxInvoiceSaleRouter');
-
+const manageCarStock = require('./routes/manageCarStock');
+const dataCustomerSale = require('./routes/dataCustomerSale');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -53,15 +54,16 @@ app.use('/billLicense', billLicenseRouter);
 app.use('/repairInvoice', repairInvoiceRouter);
 app.use('/dataCustomerBuy',dataCustomerBuy);
 app.use('/saveDataCar',saveDataCar);
-app.use('/', showRepairIncome);
-app.use('/', showLicenseIncome);
-app.use('/', registrationBook);
+app.use('/showRepairIncome', showRepairIncome);
+app.use('/showLicenseIncome', showLicenseIncome);
+app.use('/registrationBook', registrationBook);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/taxInvoiceLicense', taxInvoiceLicenseRouter);
 app.use('/taxInvoiceRepair', taxInvoiceRepairRouter);
 app.use('/taxInvoiceSale', taxInvoiceSaleRouter);
-
+app.use('/manageCarStock', manageCarStock);
+app.use('/dataCustomerSale',dataCustomerSale);
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
