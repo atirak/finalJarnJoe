@@ -15,6 +15,12 @@ const taxinvoiceBuy = require('./routes/taxinvoiceBuy');
 const bargainRouter = require('./routes/bargainRouter');
 const manageUserRouter = require('./routes/manageUserRouter');
 const home = require('./routes/home');
+const billBuyRouter = require('./routes/billBuyRouter');
+const billSaleRouter = require('./routes/billSaleRouter');
+const billRepairRouter = require('./routes/billRepairRouter');
+const billLicenseRouter = require('./routes/billLicenseRouter');
+const repairInvoiceRouter = require('./routes/repairInvoiceRouter');
+
 
 
 app.use(express.static('public'));
@@ -30,6 +36,13 @@ app.use('/taxinvoiceBuy',taxinvoiceBuy);
 app.use('/bargain',bargainRouter);
 app.use('/manageUser', manageUserRouter);
 app.use('/home', home);
+app.use('/repairInvoice', repairInvoiceRouter);
+app.use('/billBuy', billBuyRouter);
+app.use('/billSale', billSaleRouter);
+app.use('/billRepair', billRepairRouter);
+app.use('/billLicense', billLicenseRouter);
+app.use('/repairInvoice', repairInvoiceRouter);
+
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
