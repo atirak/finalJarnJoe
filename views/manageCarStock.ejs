@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <!--เชื่อมไฟล์ css-->
+    <script src="script.js"></script>
+    
+
+    <title>แสดงรายจ่ายจากการซื้อ</title>
+
+    <script>
+            function backHome() {
+                location.href = "home.html";
+            }
+    
+            
+                function printData() {
+               
+               var printContents = document.getElementById("print").innerHTML;
+               var originalContents = document.body.innerHTML;
+          
+               document.body.innerHTML = printContents;
+          
+               window.print();
+          
+               document.body.innerHTML = originalContents;
+          
+                      }
+            
+            
+        </script>
+</head>
+
+<body >
+    
+    <section class="section">
+        <div class="container">
+                <div id="print">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>แสดงรายจ่ายจากการซื้อ</center>
+            </div>
+
+            <br>
+
+            <input  id="myInput" type="text" placeholder="ค้นหา....">
+            <br />
+            <br />
+
+
+            <table border="4" align="center" width="1500">
+                <tr>
+                    <th>ทะเบียน</th>
+                    <th>ยี่ห้อ</th>
+                    <th>รุ่น</th>
+                    <th>ปี</th>
+                    <th>ราคา</th>
+                    <th>ดำเนินการ</th>
+                </tr>
+                <tbody id="myTable">
+                        <% for(var i=0; i < car.length; i++) { %>
+                <tr>
+                    <td><%= car[i].licensePlate %></td>
+                    <td><%= car[i].brand %></td>
+                    <td><%= car[i].generation %></td>
+                    <td><%= car[i].yearofcar %></td>
+                    <td><%= car[i].price.toLocaleString('en') %></td>
+                    <td><a href="/manageCarStock/sell/<%= car[i]._id %>" class="btn btn-info">ขาย</a>
+                </tr>
+                <% } %>
+            </tbody>
+
+
+            </table>
+
+
+            <br>
+            <br>
+            <br>
+        </div>
+
+
+
+
+            <div style="float: left">
+                <input type="button" class="btnAll" onclick="backProfit()" value="กลับ">
+            </div>
+            <div style="float: right">
+                <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
+            </div>
+            <br>
+            <br>
+            <!--เว้นบรรทัด-->
+
+        </div>
+    </section>
+    <script>
+        $(document).ready(function(){
+          $("#myInput").on("keyup", function() {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function() {
+              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+          });
+        });
+        
+        </script>
+        
+</body>
+
+</html>

@@ -11,7 +11,7 @@ mongoose.connect('mongodb://projectweb:p12345@ds117806.mlab.com:17806/choktaweea
 const showSaleIncomeRouter = require('./routes/showSaleIncomeRouter');
 const profitDocumentRouter = require('./routes/profitDocumentRouter');
 const showBuyIncome = require('./routes/showBuyIncome');
-const taxinvoiceBuy = require('./routes/taxinvoiceBuy');
+const taxinvoiceBuy = require('./routes/taxinvoiceBuyRouter');
 const bargainRouter = require('./routes/bargainRouter');
 const manageUserRouter = require('./routes/manageUserRouter');
 const home = require('./routes/home');
