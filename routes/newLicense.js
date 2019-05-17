@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const newLicense = express.Router();
-const TRN_OrderRenewLicense  = require('../models/TRN_OrderRenewLicense.model');
+const TRN_OrderRenewLicense  = require('../models/TRN_OrderRenewLicense');
 
 
 
