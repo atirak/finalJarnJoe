@@ -22,6 +22,9 @@ const billLicenseRouter = require('./routes/billLicenseRouter');
 const repairInvoiceRouter = require('./routes/repairInvoiceRouter');
 var dataCustomerBuy = require('./routes/dataCustomerBuy');
 var saveDataCar = require('./routes/saveDataCar');
+var showRepairIncome = require('./routes/showRepairIncome');
+var showLicenseIncome = require('./routes/showLicenseIncome');
+var registrationBook = require('./routes/registrationBook');
 
 
 
@@ -46,6 +49,9 @@ app.use('/billLicense', billLicenseRouter);
 app.use('/repairInvoice', repairInvoiceRouter);
 app.use('/dataCustomerBuy',dataCustomerBuy);
 app.use('/saveDataCar',saveDataCar);
+app.use('/', showRepairIncome);
+app.use('/', showLicenseIncome);
+app.use('/', registrationBook);
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
