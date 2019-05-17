@@ -1,29 +1,29 @@
 const express = require('express');
 const app = express();
-const dataCustomerBuy = express.Router();
+const dataCustomerSale = express.Router();
 const MST_Customer = require('../models/MST_Customer');
 
-dataCustomerBuy.route('/').get(function (req, res) {
+dataCustomerSale.route('/').get(function (req, res) {
   MST_Customer.find(function (err, build){
       if(err){
         console.log(err);
       }
       else {
-        res.render('dataCustomerBuy', {build: build});
+        res.render('dataCustomerSale', {build: build});
       }
     });
 });
 
-dataCustomerBuy.route('/create').get(function (req, res) {
+dataCustomerSale.route('/create').get(function (req, res) {
    res.render('create');
  });
 
- dataCustomerBuy.route('/post').post(function (req, res) {
+ dataCustomerSale.route('/post').post(function (req, res) {
    const MST_customer = new MST_Customer(req.body);
    console.log(MST_customer);
    MST_customer.save()
      .then(MST_customer => {
-     res.redirect('/dataCustomerBuy'); 
+     res.redirect('/dataCustomerSale'); 
      })
      .catch(err => {
      res.status(400).send("unable to save to database");
@@ -38,7 +38,7 @@ dataCustomerBuy.route('/create').get(function (req, res) {
 //  });
 
  //---------------------------------------Update-----------------------------------------------
- dataCustomerBuy.route('/update/:id').post(function (req, res) {
+ dataCustomerSale.route('/update/:id').post(function (req, res) {
   MST_Customer.findById(req.params.id, function(err, MST_customer) {
      if (!MST_customer)
        return next(new Error('Could not load Document'));
@@ -48,7 +48,7 @@ dataCustomerBuy.route('/create').get(function (req, res) {
        MST_customer.namefull = req.body.namefull;
  
        MST_customer.save().then(MST_Customer => {
-           res.redirect('/dataCustomerBuy');
+           res.redirect('/dataCustomerSale');
        })
        .catch(err => {
              res.status(400).send("unable to update the database");
@@ -57,12 +57,12 @@ dataCustomerBuy.route('/create').get(function (req, res) {
    });
  });
 // ---------------------------------------------delete------------------------------------------
-dataCustomerBuy.route('/delete/:id').get(function (req, res) {
+dataCustomerSale.route('/delete/:id').get(function (req, res) {
   MST_customer.findByIdAndRemove({_id: req.params.id},
         function(err, MST_customer){
          if(err) res.json(err);
-         else res.redirect('/dataCustomerBuy');
+         else res.redirect('/dataCustomerSale');
      });
  });
 
-module.exports = dataCustomerBuy;
+module.exports = dataCustomerSale;

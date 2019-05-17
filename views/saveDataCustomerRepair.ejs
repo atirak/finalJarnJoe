@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <script src="repair.js"></script>
+    <!--เชื่อมไฟล์ css-->
+    <title>บันทึกข้อมูลลูกค้าจากการซ่อม</title>
+
+    <script>
+        function nextDataRepair() {
+            location.href = "saveDataRepair.html";
+        }
+
+        function clearData() {
+            window.location.reload();
+        }
+
+        function backHome() {
+            location.href = "home.html";
+        }
+    </script>
+</head>
+
+<body>
+    <form id="saveDataCusRe" method="post" action="/saveDataCustomerRepair/post">
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>บันทึกข้อมูลลูกค้าจากการซ่อม</center>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="column1">
+                    ชื่อ : <input type="text" name="name" id="name"  required> <br><br>
+                    เพศ : 
+                    <select name="gender" id="gender"  >
+                    
+                                  <option value="ชาย">ชาย</option>
+                                  <option value="หญิง">หญิง</option>
+                  </select>
+                    <br>
+                    <br>
+                    เลขประจำตัวประชาชน : <input type="Number" name="cardID" id="cardID"> <br><br>
+                    เบอร์ : <input type="Number" name="phonenumber" id="phonenumber"> <br><br>
+                </div>
+                <div class="column2 ">
+                    นามสกุล : <input type="text" name="lastname" id="lastname" required> <br><br>
+                    วันเกิด : <input type="date" name="birth" id="birth" > <br><br>
+                    ที่อยู่ : <input type="text" name="address" id="address"> <br><br>
+                    ประเภทลูกค้า : <select name="typeCustomer" id="typeCustomer" >
+                            <option    hidden>เลือก...</option>
+                                          <option value="buy">ซื้อ</option>
+                                          <option value="sale">ขาย</option>
+                                          <option value="repair">ซ่อม</option>
+                                          <option value="licent">ต่อทะเบียน</option>
+                          </select>
+                          <br><br>
+                </div>
+            </div>
+            <br>
+
+            <br>
+            <div style="float: left">
+                <input type="button" class="btnAll" onclick="backHome()" value="กลับ">
+            </div>
+            <div style="float: right">
+                <button type="reset" class="btnAll">ลบใหม่ทั้งหมด</button>
+                <button onclick="checkAllCusRe()" type="button" class="btnAll"  > บันทึก</button>
+
+            </div>
+            <br>
+            <br>
+
+
+</body>
+
+</html>

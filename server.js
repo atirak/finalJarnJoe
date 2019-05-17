@@ -11,7 +11,7 @@ mongoose.connect('mongodb://projectweb:p12345@ds117806.mlab.com:17806/choktaweea
 const showSaleIncomeRouter = require('./routes/showSaleIncomeRouter');
 const profitDocumentRouter = require('./routes/profitDocumentRouter');
 const showBuyIncome = require('./routes/showBuyIncome');
-const taxinvoiceBuy = require('./routes/taxinvoiceBuy');
+const taxinvoiceBuy = require('./routes/taxinvoiceBuyRouter');
 const bargainRouter = require('./routes/bargainRouter');
 const manageUserRouter = require('./routes/manageUserRouter');
 const home = require('./routes/home');
@@ -30,7 +30,12 @@ const registerRouter = require('./routes/registerRouter');
 const taxInvoiceLicenseRouter = require('./routes/taxInvoiceLicenseRouter');
 const taxInvoiceRepairRouter = require('./routes/taxInvoiceRepairRouter');
 const taxInvoiceSaleRouter = require('./routes/taxInvoiceSaleRouter');
-
+const manageCarStock = require('./routes/manageCarStock');
+const dataCustomerSale = require('./routes/dataCustomerSale');
+const saveDataRepairRouter = require('./routes/saveDataRepairRouter');
+const saveDataCustomerRepairRouter = require('./routes/SaveDataCustomerRepairRouter');
+const dataCustomerLicense = require('./routes/dataCustomerLicense');
+var newLicense = require('./routes/newLicense');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -53,15 +58,20 @@ app.use('/billLicense', billLicenseRouter);
 app.use('/repairInvoice', repairInvoiceRouter);
 app.use('/dataCustomerBuy',dataCustomerBuy);
 app.use('/saveDataCar',saveDataCar);
-app.use('/', showRepairIncome);
-app.use('/', showLicenseIncome);
-app.use('/', registrationBook);
+app.use('/showRepairIncome', showRepairIncome);
+app.use('/showLicenseIncome', showLicenseIncome);
+app.use('/registrationBook', registrationBook);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/taxInvoiceLicense', taxInvoiceLicenseRouter);
 app.use('/taxInvoiceRepair', taxInvoiceRepairRouter);
 app.use('/taxInvoiceSale', taxInvoiceSaleRouter);
-
+app.use('/manageCarStock', manageCarStock);
+app.use('/dataCustomerSale',dataCustomerSale);
+app.use('/saveDataRepair', saveDataRepairRouter);
+app.use('/saveDataCustomerRepair', saveDataCustomerRepairRouter);
+app.use('/dataCustomerLincse', dataCustomerLicense);
+app.use('/newLicense', newLicense)
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
