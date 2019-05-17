@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ต่อทะเบียน</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+
+    <script>
+        function nextBillLicense() {
+            location.href = "billLicense.html";
+        }
+    </script>
+</head>
+
+<body>
+        <form method="post" action="/newLicense/post/"> 
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>ต่อทะเบียน</center>
+            </div>
+            <br>
+
+            <div class="row">
+                <div class="column1">
+                    ชื่อ-สกุล : <input type="text" name="name" id="name" required> <br><br>
+                    เบอร์ : <input type="text" name="phone" id="phone"> <br><br>
+                    ราคา : <input type="text" name="price" id="price" required> <br><br>
+
+                    ประเภทรถ : 
+                        <select class="select-name" name="carType" id="carType">
+                        <option value="" hidden>เลือก...</option>
+                                      <option value="จักรยานยนต์">จักรยานยนต์</option>
+                                      <option value="รถตู้">รถตู้</option>
+                                      <option value="รถเก๋ง">รถเก๋ง</option>
+                                      <option value="รถยนต์">รถยนต์</option>
+                                      <option value="รถบรรทุก">รถบรรทุก</option>
+                                      
+                                    </select>
+
+                </div>
+                <div class="column2 ">
+                    ทะเบียนรถ : <input type="text" name="license" id="license" required> <br><br>
+                    วันที่ : <input type="date" name="date" id="date" required> <br><br>
+                
+                    CCของรถ : 
+                    <select class="select-name" name="CC" id="CC">
+                    <option value="" hidden>เลือก...</option>
+                                  <option value="ไม่เกิน125cc">ไม่เกิน125cc</option>
+                                  <option value="ไม่เกิน150cc.">ไม่เกิน150cc.</option>
+                                  <option value="เกิน151cc.">เกิน151cc.</option>
+                                  
+                                  
+                                  
+                                </select>
+                                <br><br>
+                                ประเภท : 
+                                <select class="select-name" name="type" id="type">
+                                <option value="" hidden>เลือก...</option>
+                                              <option value="ต่อภาษี">ต่อภาษี</option>
+                                              <option value="ตรวจสภาพรถ">ตรวจสภาพรถ</option>
+                                              <option value="พ.ร.บ">พ.ร.บ</option>
+                                              
+                                              
+                                              
+                                            </select>             
+                
+                
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="column6">
+                                        
+                        
+
+
+
+                  
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="column6">
+                       
+                    <br>
+                    อายุของรถ : 
+                        <select class="select-name" name="carAge" id="carAge">
+                        <option value="" hidden>เลือก...</option>
+                                      <option value="ไม่เกิน 5 ปี">ไม่เกิน 5 ปี</option>
+                                      <option value="เกิน 5 ปี">เกิน 5 ปี</option>
+                                      <option value="ไม่เกิน 7 ปี">ไม่เกิน 7 ปี</option>
+                                      <option value="เกิน 7 ปี">เกิน 7 ปี</option>
+                                      
+                                      
+                                    </select>
+
+
+
+                  
+                 
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column6">
+                    <br>    
+                   
+
+
+
+
+                    
+                </div>
+                
+            </div>
+            <br><br>
+
+
+            <div style="float: right">
+                    <button type="submit" class="btnAll" >บันทึก</button>  
+            </div>
+
+            <br>
+            <br>
+
+        </div>
+    </section>
+</form>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <!--เชื่อมไฟล์ css-->
+
+
+    
+    <script src="myJS.js"></script>
+    
+    <title>บันทึกข้อมูลลูกค้าจากการต่อทะเบียน</title>
+
+    <script>
+        function clearData() {
+            window.location.reload();
+        }
+
+        function backHome() {
+            location.href = "home.html";
+        }
+
+        function nextDataCar() {
+            location.href = "saveDataCar.html";
+        }
+        function insert() {
+            var id;
+            var arrayData = [];
+            axios.get("http://localhost:3001/getDataManage").then((res) => {
+			
+            arrayData = res.data;
+            id = arrayData.data.length+1;
+
+            });
+            var name = document.getElementById("n1").value;
+            var lastname = document.getElementById("n2222").value;
+            var sex = document.getElementById("se1111").value;
+            var date = document.getElementById("n10").value;
+            var card = document.getElementById("n4").value;
+            var data = document.getElementById("n5").value;
+            var phone = document.getElementById("n6").value;
+            var type = document.getElementById("n7").value;
+            axios.post('http://localhost:3001/insert', {
+                ID_Customer: id,
+                name: name,
+                lastname: lastname,
+                gender: sex,
+                birth: date,
+                cordId: card,
+                phonenumber:phone,
+                typeCustomer: type
+            })
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+        }
+    </script>
+</head>
+
+<body>
+    <form method="post" action="/dataCustomerLicense/post/">
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>บันทึกข้อมูลลูกค้าจากการต่อทะเบียน</center>
+            </div>
+
+            <br>
+            <div class="row">
+                <div class="column1">
+                    ชื่อ : <input type="text" id="name" name="name" required> <br><br>
+                    เพศ : 
+                    <select class="select-name" name="gender" id="gender">
+                    <option value="" hidden>เลือก...</option>
+                                  <option value="men">ชาย</option>
+                                  <option value="fe">หญิง</option>
+                                </select> <br><br>
+                    เลขประจำตัวประชาชน : <input type="number" name="cordId"  id="cordId"> <br><br>
+                    เบอร์ : <input type="text" name="phonenumber" id="phonenumber"> <br><br>
+                </div>
+                <div class="column2 ">
+                    นามสกุล : <input type="text" id="lastname" name="lastname" required> <br><br>
+                    วันเกิด : <input type="date" name="birth" id="birth"> <br><br>
+                    ที่อยู่ : <input type="text" name="address" id="address"> <br><br>
+                    ประเภทลูกค้า : <input type="text" name="typeCustomer" id="typeCustomer"> <br><br>
+                </div>
+            </div>
+            <br>
+
+            <br>
+            <div style="float: left">
+                <input type="button" class="btnAll" onclick="backHome()" value="กลับ">
+            </div>
+            <div style="float: right">
+                <button type="reset" class="btnAll" >ลบใหม่ทั้งหมด</button> 
+                <button type="submit" class="btnAll" >บันทึก</button>  
+
+            </div>
+            <br><br>
+
+        </form>
+</body>
+
+</html>
