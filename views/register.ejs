@@ -12,7 +12,11 @@
     <!--font-->
 
 </head>
-
+<script>
+    if ("<%= error %>" === "ชื่อผู้ใช้ซ้ำ") {
+      alert("ชื่อผู้ใช้ซ้ำ");
+    }
+  </script>
 <body>
     <section class="section">
         <div class="container">
@@ -50,7 +54,7 @@
                         </p>
                     </div>
                 </div>
-                <span style="color: red"><%= error %></span>
+                <!-- <span style="color: red"><%= error %></span> -->
             </form>
             <p class="login2">
                 <button type="button" class="btnAll" onclick="backLogin()"><a class="aa"

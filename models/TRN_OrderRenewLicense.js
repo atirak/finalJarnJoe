@@ -3,11 +3,14 @@ const Schema = mongoose.Schema;
 const TRN_OrderRenewLicense = new Schema({
 
     name:String,
-    phone:String,
-    license:String,
-   price: Number,
+   phone:String,
+   price:Number,
+   license:String,
     date:String,
-   type:String
+    CC: String,
+    carType: String,
+    carAge: String,
+    type: String
     
    
     },{

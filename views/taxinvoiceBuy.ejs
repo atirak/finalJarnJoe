@@ -27,23 +27,31 @@
 <body>
     <section class="section">
         <div class="container">
+<<<<<<< HEAD
                 <div id="print">
             <div class="UpperTitle">
                 <img class="logo" src="/logo Chokthawee.png">
                 <center>ใบกำกับภาษีการซื้อ</center>
             </div>
+=======
+            <div id="print">
+                <div class="UpperTitle">
+                    <img class="logo" src="logo Chokthawee.png">
+                    <center>ใบกำกับภาษีการซื้อ</center>
+                </div>
+>>>>>>> ae37008b110a534fae3ff7017bc4bd651b0c125a
 
-            <div class="boxmodel">
-                <div class="container">
-                    <div class="date">
-                        <label for="dates">
+                <div class="boxmodel">
+                    <div class="container">
+                        <div class="date">
+                            <label for="dates">
                             <b>วันที่ :</b><%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%>
                         </label>
+                        </div>
+                        <p class="all">เลขที่ : 00754</p>
+                        <p class="all">บริษัท โชคทวีออโต้เซล จำกัด <br>โทร. 038-553092</p>
                     </div>
-                    <p class="all">เลขที่ : 00754</p>
-                    <p class="all">บริษัท โชคทวีออโต้เซล จำกัด <br>โทร. 038-553092</p>
                 </div>
-            </div>
 
             <table border="4" ALIGN=center width=1100>
                     <tr>
@@ -70,13 +78,9 @@
                     <br> ภาษี 3% : <%= (TaxInvoiceBuy.price*0.03).toLocaleString('en') %> บาท
                     <br> ราคาสุทธิ : <%= (TaxInvoiceBuy.price+(TaxInvoiceBuy.price*0.03)).toLocaleString('en') %> บาท
                 </strong>
-            </p>
-            <br>
-
-            <br>
-            <p style="text-align: center">
-                _______ลงชื่อลูกค้า_______ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_____ลงชื่อพนักงาน_____
+                </p>
                 <br>
+<<<<<<< HEAD
                 (______________________) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(_____________________)
             </p>
             <br>
@@ -84,8 +88,23 @@
 
             <div style="text-align: center">
                 <input type="button" class="btnAll" onclick="home()" value="กลับหน้าหลัก">
+=======
+
+                <br>
+                <p style="text-align: center">
+                    _______ลงชื่อลูกค้า_______ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_____ลงชื่อพนักงาน_____
+                    <br> (______________________) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(_____________________)
+                </p>
+                <br>
+            </div>
+        <div class="container">
+             <div style="text-align: center">
+                <input type="button" class="btnAll" value="กลับหน้าหลัก">
+>>>>>>> ae37008b110a534fae3ff7017bc4bd651b0c125a
                 <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
             </div>
+        </div>
+           
             <br>
     </section>
 </body>
