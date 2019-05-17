@@ -34,7 +34,8 @@ const manageCarStock = require('./routes/manageCarStock');
 const dataCustomerSale = require('./routes/dataCustomerSale');
 const saveDataRepairRouter = require('./routes/saveDataRepairRouter');
 const saveDataCustomerRepairRouter = require('./routes/SaveDataCustomerRepairRouter');
-
+const dataCustomerLicense = require('./routes/dataCustomerLicense');
+// var newLicense = require('./routes/newLicense');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -69,6 +70,8 @@ app.use('/manageCarStock', manageCarStock);
 app.use('/dataCustomerSale',dataCustomerSale);
 app.use('/saveDataRepair', saveDataRepairRouter);
 app.use('/saveDataCustomerRepair', saveDataCustomerRepairRouter);
+app.use('/dataCustomerLincse', dataCustomerLicense);
+// app.use('/newLicense', newLicense)
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
