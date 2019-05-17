@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="myJS.js"></script>
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <title>ยินดีต้อนรับ</title>
+</head>
+<body>
+    <form method="post" id="form" action="/dataCustomerBuy/post/">
+    <!-- <script src="./node_modules/axios/dist/axios.min.js"></script> -->
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>บันทึกข้อมูลลูกค้าจากการซื้อ</center>
+            </div>
+            <br>
+            <div class="row">
+                <div class="column1">
+                    ชื่อ : <input type="text"  id="name" name="name"> <br><br>
+                    เพศ :
+                    <select class="select-name" name="gender" id="gender">
+                        <option value="">เลือก</option>
+                        <option value="ชาย">ชาย</option>
+                        <option value="หญิง">หญิง</option>
+                    </select>
+                    <br>
+                    <br>
+                    เลขประจำตัวประชาชน : <input type="text" maxlength="13" id="cardID" name="cardID"> <br><br>
+                    เบอร์ : <input type="tel" maxlength="10" id="phonenumber" name="phonenumber"> <br><br>
+                </div>
+
+                <div class="column2 ">
+                    นามสกุล : <input type="text"  id="lastname" name="lastname"> <br><br>
+                    วันเกิด : <input type="date" name="birth"  id="birth"> <br><br>
+                    ที่อยู่ : <input type="text"   id="address" name="address"> <br><br>
+                    ประเภทลูกค้า :  <select class="select-name" name="typeCustomer" id="typeCustomer">
+                        <option value="">เลือก</option>
+                        <option value="ลูกค้าซื้อ">ลูกค้าซื้อ</option>
+                        <option value="ลูกค้าขาย">ลูกค้าขาย</option>
+                        <option value="ลูกค้าเช่า">ลูกค้าเช่า</option>
+                    </select> <br><br>
+                </div>
+            </div>
+            <br>
+
+            <br>
+            <div style="float: left">
+                <input type="button" class="btnAll" onclick="backHome()" value="กลับ">
+            </div>
+            <div style="float: right">
+                <button type="reset" class="btnAll" >ลบใหม่ทั้งหมด</button></td>
+                </tr>
+                <button type="button" class="btnAll" onclick="checkAll()" >บันทึก</button>
+
+            </div>
+            <br>
+            <br>
+        </form>
+          
+</body>
+</html>
