@@ -10,15 +10,25 @@
 </head>
 <script>
         function printData() {
-            window.print();
-        }
+               
+               var printContents = document.getElementById("print").innerHTML;
+               var originalContents = document.body.innerHTML;
+          
+               document.body.innerHTML = printContents;
+          
+               window.print();
+          
+               document.body.innerHTML = originalContents;
+          
+                      }
     </script>
 
 <body>
     <section class="section">
         <div class="container">
+                <div id="print">
             <div class="UpperTitle">
-                <img class="logo" src="logoChoktawee.png">
+                <img class="logo" src="logo Chokthawee.png">
                 <center>ใบกำกับภาษีการซื้อ</center>
             </div>
 
@@ -64,6 +74,7 @@
                 (______________________) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(_____________________)
             </p>
             <br>
+                </div>
 
             <div style="text-align: center">
                 <input type="button" class="btnAll" value="กลับหน้าหลัก">
