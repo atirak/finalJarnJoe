@@ -11,7 +11,7 @@
 
 <body>
     <section class="section">
-        <div class="container">
+        <div class="container" id="print">
             <div class="UpperTitle">
                 <img class="logo" src="logo Chokthawee.png">
                 <center>ใบเสร็จการซ่อม</center>
@@ -53,23 +53,31 @@
             <br>
             <h6 style="text-align:center">ขอบคุณที่ใช้บริการ</h6>
             <br>
+        </div>
 
+        <div class="container">
             <div style="text-align: center">
-                <button type="button" class="btnAll" value="ใบกำกับภาษี"><a>ใบกำกับภาษี</a></button>
-                <button type="button" class="btnAll" onclick="printData()" value="พิมพ์"><a>พิมพ์</a></button>
-
+                <input type="button" class="btnAll" value="ใบกำกับภาษี">
+                <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
             </div>
+        </div>
 
-            <br>
-            <br>
-            <!--เว้นบรรทัด-->
+
+
+        <br>
+        <br>
+        <!--เว้นบรรทัด-->
 
         </div>
     </section>
 </body>
 <script>
     function printData() {
+        var printContents = document.getElementById("print").innerHTML;
+        var originalContents = document.body.innerHTML;
+        document.body.innerHTML = printContents;
         window.print();
+        document.body.innerHTML = originalContents;
     }
 </script>
 

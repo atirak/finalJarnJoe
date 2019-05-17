@@ -14,7 +14,17 @@ CoinRouter.route('/').get(function (req, res) {
       }
     });
 });
-
+carID = ""
+CoinRouter.route('/sell/:id').get(function (req, res) {
+  
+  
+  Coin.findById(carID, function (err, coin){
+    carID = req.params.id;
+    console.log("carID1 : "+carID)
+      // res.render('dataCustomerSale', {car: coin});
+      res.redirect('/dataCustomerBuy')
+  });
+});
 
 CoinRouter.route('/create').get(function (req, res) {
    res.render('create');
