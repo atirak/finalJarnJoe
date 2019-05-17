@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <!--font-->
     <link rel="stylesheet" type="text/css" href="web.css">
     <!--เชื่อมไฟล์ css-->
     <script src="script.js"></script>
-    
+
 
     <title>แสดงรายได้จากการต่อทะเบียน</title>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
@@ -26,18 +29,18 @@
         }
 
         function printData() {
-               
-               var printContents = document.getElementById("print").innerHTML;
-               var originalContents = document.body.innerHTML;
-          
-               document.body.innerHTML = printContents;
-          
-               window.print();
-          
-               document.body.innerHTML = originalContents;
-          
-                      }
-        function showData(){
+
+            var printContents = document.getElementById("print").innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+
+        }
+        function showData() {
             var arrayData = [];
             axios.get("http://localhost:3001/getData").then((res) => {
                 arrayData = res.data;
@@ -59,50 +62,54 @@
 </head>
 
 <body onload="showData()">
-    
+
     <section class="section">
-      <div class="container">
-            <div id="print"> 
-        <img class="logo" src="logo Chokthawee.png">
+        <div class="container">
+            <div id="print">
+                <!-- <img class="logo" src="logo Chokthawee.png">
   
-        <h1 class="repair">แสดงรายได้จากการต่อทะเบียน</h1>
-  
-        <br>
+        <h1 class="repair">แสดงรายได้จากการต่อทะเบียน</h1> -->
+                <div class="UpperTitle">
+                    <img class="logo" src="logo Chokthawee.png">
+                    <center>แสดงรายได้จากการต่อทะเบียน</center>
+                </div>
 
-        <input  id="myInput" type="text" placeholder="ค้นหา....">
+                <br>
 
-            <br />
-            <br />
+                <input id="myInput" type="text" placeholder="ค้นหา....">
 
-
-            <table border="4" align="center" width="1500" >
-                <tr>
-                    <th>รายการ</th>
-                    <th>วันที่</th>
-                    <th>จำนวนเงิน</th>
-                </tr>
-                <tbody id="myTable">
-                    <% for(var i=0; i < TRN_OrderRenewLicense.length; i++) { %>
-                <tr>
-                    <td><%= TRN_OrderRenewLicense[i].license %>&nbsp;&nbsp;</td>
-                    <td><%= TRN_OrderRenewLicense[i].date %></td>
-                    <td><%= TRN_OrderRenewLicense[i].price.toLocaleString('en') %></td>
-                </tr>
-                <% } %>
-            </tbody>
+                <br />
+                <br />
 
 
-            </table>
-            
+                <table border="4" align="center" width="1500">
+                    <tr>
+                        <th>รายการ</th>
+                        <th>วันที่</th>
+                        <th>จำนวนเงิน</th>
+                    </tr>
+                    <tbody id="myTable">
+                        <% for(var i=0; i < TRN_OrderRenewLicense.length; i++) { %>
+                        <tr>
+                            <td><%= TRN_OrderRenewLicense[i].license %>&nbsp;&nbsp;</td>
+                            <td><%= TRN_OrderRenewLicense[i].date %></td>
+                            <td><%= TRN_OrderRenewLicense[i].price.toLocaleString('en') %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
 
 
-            <br>
-            <br>
-            <br>
+                </table>
 
 
 
-</div>
+                <br>
+                <br>
+                <br>
+
+
+
+            </div>
 
             <div style="float: left">
                 <input type="button" class="btnAll" onclick="backProfit()" value="กลับ">
@@ -117,15 +124,15 @@
         </div>
     </section>
     <script>
-            $(document).ready(function(){
-              $("#myInput").on("keyup", function() {
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
                 var value = $(this).val().toLowerCase();
-                $("#myTable tr").filter(function() {
-                  $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
                 });
-              });
             });
-            </script>
+        });
+    </script>
 </body>
 
 </html>

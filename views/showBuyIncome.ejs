@@ -6,84 +6,87 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
     <!--font-->
     <link rel="stylesheet" type="text/css" href="web.css">
     <!--เชื่อมไฟล์ css-->
     <script src="script.js"></script>
-    
+
 
     <title>แสดงรายจ่ายจากการซื้อ</title>
 
     <script>
-            function backHome() {
-                location.href = "home.html";
-            }
-    
-            
-                function printData() {
-               
-               var printContents = document.getElementById("print").innerHTML;
-               var originalContents = document.body.innerHTML;
-          
-               document.body.innerHTML = printContents;
-          
-               window.print();
-          
-               document.body.innerHTML = originalContents;
-          
-                      }
-            
-            
-        </script>
+        function backHome() {
+            location.href = "home.html";
+        }
+
+
+        function printData() {
+
+            var printContents = document.getElementById("print").innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+
+        }
+
+
+    </script>
 </head>
 
 <body onload="showData()">
-    
+
     <section class="section">
         <div class="container">
-                <div id="print">
-            <div class="UpperTitle">
-                <img class="logo" src="logo Chokthawee.png">
-                <center>แสดงรายจ่ายจากการซื้อ</center>
-            </div>
+            <div id="print">
+                <div class="UpperTitle">
+                    <img class="logo" src="logo Chokthawee.png">
+                    <center>แสดงรายจ่ายจากการซื้อ</center>
+                </div>
 
-            <br>
+                <br>
 
-            <input  id="myInput" type="text" placeholder="ค้นหา....">
-            <br />
-            <br />
+                <input id="myInput" type="text" placeholder="ค้นหา....">
+                <br />
+                <br />
 
 
-            <table border="4" align="center" width="1500">
-                <tr>
-                    <th>รายการ</th>
-                    <th>วันที่</th>
-                    <th>จำนวนเงิน</th>
-                </tr>
-                <tbody id="myTable">
+                <table border="4" align="center" width="1500">
+                    <tr>
+                        <th>รายการ</th>
+                        <th>วันที่</th>
+                        <th>จำนวนเงิน</th>
+                    </tr>
+                    <tbody id="myTable">
                         <% for(var i=0; i < OrderBuy.length; i++) { %>
-                <tr>
-                    <td><%= OrderBuy[i].list %></td>
-                    <td><%= OrderBuy[i].date %></td>
-                    <td><%= OrderBuy[i].price.toLocaleString('en') %></td>
-                </tr>
-                <% } %>
-            </tbody>
+                        <tr>
+                            <td><%= OrderBuy[i].list %></td>
+                            <td><%= OrderBuy[i].date %></td>
+                            <td><%= OrderBuy[i].price.toLocaleString('en') %></td>
+                        </tr>
+                        <% } %>
+                    </tbody>
 
 
-            </table>
+                </table>
 
 
-            <br>
-            <br>
-            <br>
-        </div>
+                <br>
+                <br>
+                <br>
+            </div>
 
 
 
@@ -101,17 +104,17 @@
         </div>
     </section>
     <script>
-        $(document).ready(function(){
-          $("#myInput").on("keyup", function() {
-            var value = $(this).val().toLowerCase();
-            $("#myTable tr").filter(function() {
-              $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        $(document).ready(function () {
+            $("#myInput").on("keyup", function () {
+                var value = $(this).val().toLowerCase();
+                $("#myTable tr").filter(function () {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+                });
             });
-          });
         });
-        
-        </script>
-        
+
+    </script>
+
 </body>
 
 </html>
