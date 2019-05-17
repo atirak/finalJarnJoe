@@ -12,6 +12,7 @@ const showSaleIncomeRouter = require('./routes/showSaleIncomeRouter');
 const profitDocumentRouter = require('./routes/profitDocumentRouter');
 const showBuyIncome = require('./routes/showBuyIncome');
 const taxinvoiceBuy = require('./routes/taxinvoiceBuy');
+const bargainRouter = require('./routes/bargainRouter');
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -23,6 +24,7 @@ app.use('/showSaleIncome',showSaleIncomeRouter);
 app.use('/profitDocument', profitDocumentRouter);
 app.use('/showBuyIncome',showBuyIncome);
 app.use('/taxinvoiceBuy',taxinvoiceBuy);
+app.use('/bargain',bargainRouter);
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
 });
