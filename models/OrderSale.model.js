@@ -4,15 +4,16 @@ const Schema = mongoose.Schema;
 const OrderSale = new Schema({
     
     ID_OrderSale: { type: Number },
-    ID_CarStock: { type: String },
-    date: { type: String },
+    nameCus: { type: String },
+    nameEmp: { type: String },
     price: { type: Number },
-    ID_Customer: { type: Number },
-    ID_Employee: { type: Number },
-    ID_Partner: { type: Number },
-    ID_Bargain: { type: Number },
-    ID_Bill: { type: Number },
-    ID_Reciept: { type: Number }
+    brand: { type: String },
+    generation: { type: String },
+    yearofcar: { type: String },
+    color: { type: String },
+    licensePlate: { type: String }
+
+   
 },{
     collection: 'TRN_OrderSale'
 });

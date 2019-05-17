@@ -4,6 +4,7 @@ const dataCustomerSale = express.Router();
 const MST_Customer = require('../models/MST_Customer');
 
 dataCustomerSale.route('/').get(function (req, res) {
+  
   MST_Customer.find(function (err, build){
       if(err){
         console.log(err);

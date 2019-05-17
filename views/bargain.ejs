@@ -4,12 +4,15 @@
 <head>
     <meta charset="utf-8">
     <!-- <link rel="stylesheet" href="/css/bootstrap.min.css"> -->
-    
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
@@ -18,140 +21,161 @@
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
     <title>สัญญาซื้อ-ขาย</title>
     <script>
-            
-    
-            function printData() {
-               
-     var printContents = document.getElementById("print").innerHTML;
-     var originalContents = document.body.innerHTML;
 
-     document.body.innerHTML = printContents;
 
-     window.print();
+        function printData() {
 
-     document.body.innerHTML = originalContents;
+            var printContents = document.getElementById("print").innerHTML;
+            var originalContents = document.body.innerHTML;
 
-            }
-        </script>
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = originalContents;
+
+        }
+
+        function bill() {
+            location.href = "/bargain/bill";
+        }
+    </script>
 
 </head>
 
 <body>
-    
-        <section class="section">
-            <div class="container">
-                <div id="print">
+
+    <section class="section">
+        <div class="container">
+            <div id="print">
                 <div class="UpperTitle">
                     <img class="logo" src="logo Chokthawee.png">
                     <center>สัญญาซื้อ-ขาย</center>
                 </div>
                 <br>
                 <!--เว้นบรรทัด-->
-    
-    
+
+
                 <p class="bargain">
-                    สัญญาฉบับนี้จัดทำขึ้น ณ โชคทวีออโต้เซล เมื่อวันที่ <%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%> &nbsp;
+                    สัญญาฉบับนี้จัดทำขึ้น ณ โชคทวีออโต้เซล เมื่อวันที่
+                    <%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%> &nbsp;
                     <!--&nbsp คือ เว้นวรรค-->
                 </p>
-    
+
                 <p class="bargain">
                     ระหว่าง
-                    <%= bargain.nameC %>
-                    <%= bargain.lnameC %> ซึ่งต่อไปในสัญญาจะเรียกว่า “ผู้ขาย”
+                    <%= cus.name %>
+                    <%= cus.lastname %>
                 </p>
-    
+
                 <p class="bargain">
-                    ฝ่ายหนึ่งกับ
-                   
-                    <%= bargain.nameE %>
-                    <%= bargain.lnameE %> ซึ่งต่อไปในสัญญาจะเรียกว่า “ผู้ซื้อ”
+                    กับ
+
+                    <%= emp.name %>
+                    <%= emp.lastname %>
                 </p>
-    
+
                 <br>
-    
+
                 <p class="bargain">
                     ฝ่ายหนึ่งคู่สัญญาทั้งสองฝ่ายตกลงเงื่อนไขสัญญากันไว้โดยมีรายละเอียดดังนี้
                 </p>
-    
+
                 <br>
-    
+
                 <p class="bargain2">
-                    ข้อ 1. ผู้ซื้อตกลงซื้อและผู้ขายตกลงขายรถยนต์ประเภท <%= bargain.type %> ยี่ห้อ <%= bargain.brand %> รุ่น <%= bargain.model %> ปี <%= bargain.year %> 
-    
+                    ข้อ 1. ผู้ซื้อตกลงซื้อและผู้ขายตกลงขายรถยนต์ยี่ห้อ <%= car.brand %> รุ่น <%= car.generation %> ปี
+                    <%= car.yearofcar %>
+
                 </p>
-    
+
                 <p class="bargain2">
-                    สี <%= bargain.color %> หมายเลขทะเบียน <%= bargain.license %>
-    
+                    สี <%= car.color %> หมายเลขทะเบียน <%= car.licensePlate %>
+
                 </p>
-    
-               
-    
+
+
+
                 <p class="bargain2">
-                    ข้อ 2. คู่สัญญาทั้งสองฝ่ายตกลงซื้อขายรถยนต์คันดังกล่าว ในราคาท้้งสิ้น <%= bargain.price.toLocaleString('en') %> บาท 
-    
+                    ข้อ 2. คู่สัญญาทั้งสองฝ่ายตกลงซื้อขายรถยนต์คันดังกล่าว ในราคาท้้งสิ้น
+                    <%= parseFloat(car.price).toLocaleString() %> บาท
+
                 </p>
-    
-                
+
+
                 <p class="bargain2">
-                    ข้อ 3. ผู้ขายได้ทำการส่งมอบรถให้กับผู้ซื้อแล้วในสภาพเรียบร้อยตรงตามวัตถุประสงค์ของผู้ซื้อทุกประการและให้ถือว่ากรรมสิทธิ์ในรถยนต์ได้โอนให้กับผู้ซื้อเรียบร้อยแล้วในวันที่ทำสัญญานี้
+                    ข้อ 3.
+                    ผู้ขายได้ทำการส่งมอบรถให้กับผู้ซื้อแล้วในสภาพเรียบร้อยตรงตามวัตถุประสงค์ของผู้ซื้อทุกประการและให้ถือว่ากรรมสิทธิ์ในรถยนต์ได้โอนให้กับผู้ซื้อเรียบร้อยแล้วในวันที่ทำสัญญานี้
                 </p>
-    
+
                 <p class="bargain2">
-                    ข้อ 4. ผู้ซื้อตกลงจะดำเนินการเปลี่ยนแปลงชื่อเจ้าของรถยนต์ในสมุดคู่มือทะเบียนรถยนต์ด้วยยค่าใช้จ่ายของผู้ซื้อเอง ทั้งสิ้น โดยผู้ขายได้จัดทำ หนังสือมอบอำนาจ และเอกสารที่เกี่ยวขอ้งกับการดำเนินการดังกล่าวมอบให้ผู้ซื้อเรียบร้อย
-    
+                    ข้อ 4.
+                    ผู้ซื้อตกลงจะดำเนินการเปลี่ยนแปลงชื่อเจ้าของรถยนต์ในสมุดคู่มือทะเบียนรถยนต์ด้วยยค่าใช้จ่ายของผู้ซื้อเอง
+                    ทั้งสิ้น โดยผู้ขายได้จัดทำ หนังสือมอบอำนาจ
+                    และเอกสารที่เกี่ยวขอ้งกับการดำเนินการดังกล่าวมอบให้ผู้ซื้อเรียบร้อย
+
                 </p>
-    
+
                 <p class="bargain">
-                    ในวันทำสัญญานี้ ทั้งนี้ในระหว่างที่ผู้ดำเนินการตามวรรคแรก หากผู้ซื้อกระทำการใดๆ หรือยินยอมให้บุคคลภายนอก กระทำการใดๆ ที่มีผลให้ผู้ขายได้รับความเดือดร้อน หรือได้รับความเสียหาย ผู้ขายมีสิทธิที่จะเรียกค่าเสียหายจาก
-    
+                    ในวันทำสัญญานี้ ทั้งนี้ในระหว่างที่ผู้ดำเนินการตามวรรคแรก หากผู้ซื้อกระทำการใดๆ
+                    หรือยินยอมให้บุคคลภายนอก กระทำการใดๆ ที่มีผลให้ผู้ขายได้รับความเดือดร้อน หรือได้รับความเสียหาย
+                    ผู้ขายมีสิทธิที่จะเรียกค่าเสียหายจาก
+
                 </p>
-    
+
                 <p class="bargain2">
                     ผู้ซื้อได้ทันที
-    
+
                 </p>
-    
+
                 <p class="bargain">
-                    สัญญานี้ทำขึ้นเป็นสองฉบับมีข้อความถูกต้องตรงกัน ทั้งสองฝ่ายได้ทราบและเข้าใจข้อความโดยตลอดดีแล้ว เห็นว่า ตรงตามเจตนาของตน จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยาน และต่างยึดถือไว้ฝ่ายละฉบับ
-    
+                    สัญญานี้ทำขึ้นเป็นสองฉบับมีข้อความถูกต้องตรงกัน ทั้งสองฝ่ายได้ทราบและเข้าใจข้อความโดยตลอดดีแล้ว
+                    เห็นว่า ตรงตามเจตนาของตน จึงได้ลงลายมือชื่อไว้เป็นสำคัญต่อหน้าพยาน และต่างยึดถือไว้ฝ่ายละฉบับ
+
                 </p>
                 <br>
                 <br>
                 <p class="bargain">
-                    ลงชื่อ_______________(ผู้ขาย) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ลงชื่อ________________(ผู้ซื้อ)
-    
-    
-    
+                    ลงชื่อ_______________(ผู้ขาย)
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ลงชื่อ________________(ผู้ซื้อ)
+
+
+
                     <p class="bargain">
-                        (_________________) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (_________________)
+                        (_________________)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (_________________)
                     </p>
-    
+
                     <p class="bargain">
-                        ลงชื่อ_______________(พยาน) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ลงชื่อ________________(พยาน)
-    
-    
-    
+                        ลงชื่อ_______________(พยาน)
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        ลงชื่อ________________(พยาน)
+
+
+
                         <p class="bargain">
-                            (_________________) &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (_________________)
+                            (_________________)
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; (_________________)
                         </p>
                         <br>
-                    
-    </div>
-    
-                        <div style="float:left">
-                            <input id="printpagebutton" type="button" class="btnAll" onclick="printData()" value="พิมพ์">
-    
-                        </div>
-                        
-                        <br>
-                        <br>
-    
+
             </div>
-        </section>
+
+            <div style="text-align: center">
+                <input id="printpagebutton" type="button" class="btnAll" onclick="printData()" value="พิมพ์">
+                <input type="button" class="btnAll" onclick="bill()" value="ใบเสร็จ">
+            </div>
+
+
+            <br>
+            <br>
+
+        </div>
+    </section>
 
 </body>
 
 </html>
-
-

@@ -18,7 +18,7 @@
     <script src="script.js"></script>
     
 
-    <title>แสดงรายจ่ายจากการซื้อ</title>
+    <title>รถทั้งหมด</title>
 
     <script>
             function backHome() {
@@ -50,7 +50,7 @@
                 <div id="print">
             <div class="UpperTitle">
                 <img class="logo" src="logo Chokthawee.png">
-                <center>แสดงรายจ่ายจากการซื้อ</center>
+                <center>แสดงรายการรถ</center>
             </div>
 
             <br>
@@ -66,6 +66,7 @@
                     <th>ยี่ห้อ</th>
                     <th>รุ่น</th>
                     <th>ปี</th>
+                    <th>สี</th>
                     <th>ราคา</th>
                     <th>ดำเนินการ</th>
                 </tr>
@@ -76,8 +77,10 @@
                     <td><%= car[i].brand %></td>
                     <td><%= car[i].generation %></td>
                     <td><%= car[i].yearofcar %></td>
+                    <td><%= car[i].color %></td>
+                    
                     <td><%= car[i].price.toLocaleString('en') %></td>
-                    <td><a href="/manageCarStock/sell/<%= car[i]._id %>" class="btn btn-info">ขาย</a>
+                    <td><a href="/manageCarStock/sell/<%= car[i]._id %>" class="btnAll" > เลือกเพื่อขาย   </a>
                 </tr>
                 <% } %>
             </tbody>
