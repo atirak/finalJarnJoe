@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <!--เชื่อมไฟล์ css-->
+
+    <title>หน้าหลัก</title>
+
+    <script>
+        function nextDataBuy() {
+            location.href = "/dataCustomerBuy";
+        }
+
+        function nextDataSale() {
+            location.href = "saveDataCustomerRepair";
+        }
+
+        function nextDataLicense() {
+            location.href = "dataCustomerLicense.html";
+        }
+
+        function nextDataRepair() {
+            location.href = "dataCustomerRepair.html";
+        }
+
+        function nextDataProfit() {
+            location.href = "profitDocument.html";
+        }
+    </script>
+
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img src="logo Chokthawee.png"> หน้าหลัก
+            </div>
+
+            <br>
+
+            <div class="row">
+                <div class="cols">
+                    <p style="text-align:center">
+                        <input type="image" class="photoHome" src="safe.png" onclick="nextDataBuy()"> <br>
+                        <label>บันทึกข้อมูลลูกค้า<br>จากการซื้อรถ</label>
+                    </p>
+
+                    <p>
+                        <input type="image" class="photoHome" src="safe.png" onclick="nextDataLicense()"> <br>
+                        <label>บันทึกข้อมูลลูกค้า<br>จากการต่อทะเบียน</label>
+                    </p>
+                </div>
+
+
+                <div class="cols">
+                    <p style="text-align:center">
+                        <input type="image" class="photoHome" src="safe.png" onclick="nextDataRepair()"> <br>
+                        <label>บันทึกข้อมูลลูกค้า<br>จากการซ่อม</label>
+                    </p>
+
+                    <p style="text-align:center">
+                        <input type="image" class="photoHome2" src="report.png" onclick="nextDataProfit()"> <br>
+                        <label>เอกสาร<br>กำไร/ขาดทุน</label>
+                    </p>
+                </div>
+
+                <div class="cols">
+                    <p style="text-align:center">
+                        <input type="image" class="photoHome" src="safe.png" onclick="nextDataSale()"> <br>
+                        <label>บันทึกข้อมูลลูกค้า<br>จากการขาย</label>
+                    </p>
+                </div>
+
+            </div><br>
+        </div>
+    </section>
+
+</body>
+
+</html>
