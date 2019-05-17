@@ -1,17 +1,21 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-// Schema Validation
-const Customer = new Schema({
-    "ID_Customer": Number,
-    "name": String,
-    "lastname": String,
-    "gender": String,
-    "birth": Date,
-    "cordId": "",
-    "phonenumber": String,
-    "typeCustomer": String,
+
+const MST_Customer = new Schema({
+    
+    name  : { type: String },
+    lastname : { type: String },
+    gender  : { type: String },
+    birth : { type: String },
+    cardID : { type: String },
+    phonenumber : { type: String },
+    address: { type: String},
+    typeCustomer : { type: String }
+    
 },{
+    
     collection: 'MST_Customer'
+    
 });
 
-module.exports = mongoose.model('Customer', Customer);
+module.exports = mongoose.model('MST_Customer', MST_Customer);

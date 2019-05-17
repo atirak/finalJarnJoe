@@ -32,6 +32,9 @@ const taxInvoiceRepairRouter = require('./routes/taxInvoiceRepairRouter');
 const taxInvoiceSaleRouter = require('./routes/taxInvoiceSaleRouter');
 const manageCarStock = require('./routes/manageCarStock');
 const dataCustomerSale = require('./routes/dataCustomerSale');
+const saveDataRepairRouter = require('./routes/saveDataRepairRouter');
+const saveDataCustomerRepairRouter = require('./routes/SaveDataCustomerRepairRouter');
+
 
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
@@ -64,6 +67,8 @@ app.use('/taxInvoiceRepair', taxInvoiceRepairRouter);
 app.use('/taxInvoiceSale', taxInvoiceSaleRouter);
 app.use('/manageCarStock', manageCarStock);
 app.use('/dataCustomerSale',dataCustomerSale);
+app.use('/saveDataRepair', saveDataRepairRouter);
+app.use('/saveDataCustomerRepair', saveDataCustomerRepairRouter);
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));

@@ -3,10 +3,15 @@ const Schema = mongoose.Schema;
 const MST_OrderRepair = new Schema({
 
    
-    licensePlate:String,
-    price: Number,
-    date:String,
-   problem:String
+    brand: { type: String },
+    generation: { type: String },
+    date: { type: String },
+    color: { type: String },
+    licensePlate : { type: String },
+    status: { type: String },
+    price: { type: Number },
+    employee : { type: String },
+    problem : { type: String }
     
    
     },{

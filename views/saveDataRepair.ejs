@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <!--เชื่อมไฟล์ css-->
+    <script src="repair.js"></script>
+
+
+    <title>บันทึกข้อมูลการซ่อม</title>
+    <!-- <script>
+        function nextRepairInvoiced() {
+            location.href = "repairInvoiced.html";
+        }
+
+        function clearData() {
+            window.location.reload();
+        }
+    </script> -->
+</head>
+
+<body>
+        <form id="saveDataRe" method="post" action="/saveDataRepair/post/">
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logo Chokthawee.png">
+                <center>บันทึกข้อมูลการซ่อม</center>
+            </div>
+            
+            <br>
+            <div class="row">
+                <div class="column1">
+                    ยี่ห้อ : <input type="text" name="brand" id="brand"><br><br>
+                    รุ่น : <input type="text" name="generation" id="generation" ><br><br>
+                    เลขทะเบียน : <input type="text" name="licensePlate" id="licensePlate"><br><br>
+                    ราคา : <input id="price" type="text" name="price" id="price"><br><br>
+
+                </div>
+
+                <div class="column2">
+
+
+                    วันที่รับรถ : <input type="date" name="date" id="date"> <br><br>
+
+                    สี : <select class="select-name" name="color" id="color">
+                            
+                            <option value="white">ขาว</option>
+                            <option value="black">ดำ</option>
+                            <option value="red">แดง</option>
+                            <option value="blue">น้ำเงิน</option>
+                            <option value="yellow">เหลือง</option>
+                            <option value="grey">เทา</option>
+                            <option value="green">เขียว</option>
+                            <option value="orange">ส้ม</option>
+                    </select>
+                    <br>
+                    <br>
+                    สถานะ : 
+                    <select class="select-name" name="status" id="status">
+                            <option value="รอซ่อม">รอซ่อม</option>
+                            <option value="กำลังซ่อม">กำลังซ่อม</option>
+                            <option value="ซ่อมเสร็จรอส่งงาน">ซ่อมเสร็จรอส่งงาน</option>
+                            <option value="ซ่อมไม่ได้คืนงาน">ซ่อมไม่ได้คืนงาน</option>
+                            <option value="ส่งงานแล้ว">ส่งงานแล้ว</option>
+                            </select><br><br>
+                    พนักงานซ่อม : <input type="text" name="employee" id="employee"><br><br>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="column5">
+                    อาการ/สาเหตุ : 
+                    <input type="text" name="problem" id="problem"> </textarea>
+                </div>
+            </div>
+           
+
+            <br>
+            <br>
+
+            <div style="float: right">
+                <button type="reset" class="btnAll">ลบใหม่ทั้งหมด</button> 
+                <button onclick="checkAllDataRe()" type="button" class="btnAll"  > บันทึก</button>
+            </div>
+            <br>
+            <br>
+
+        </div>
+    </form>
+</body>
+
+</html>

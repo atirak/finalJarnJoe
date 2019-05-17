@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const dataCustomerLicense = express.Router();
-const MST_Customer = require('../models/MST_Customer.model');
+const MST_Customer = require('../models/MST_Customer');
 
 
 
