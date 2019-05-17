@@ -10,6 +10,7 @@ mongoose.connect('mongodb://projectweb:p12345@ds117806.mlab.com:17806/choktaweea
 
 const showSaleIncomeRouter = require('./routes/showSaleIncomeRouter');
 const profitDocumentRouter = require('./routes/profitDocumentRouter');
+const bargainRouter= require('./routes/bargainRouter');
 
 
 app.use(express.static('public'));
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 
 app.use('/showSaleIncome',showSaleIncomeRouter);
 app.use('/profitDocument', profitDocumentRouter);
+app.use('/bargain', bargainRouter);
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
