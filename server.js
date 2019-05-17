@@ -25,7 +25,11 @@ var saveDataCar = require('./routes/saveDataCar');
 var showRepairIncome = require('./routes/showRepairIncome');
 var showLicenseIncome = require('./routes/showLicenseIncome');
 var registrationBook = require('./routes/registrationBook');
-
+const loginRouter = require('./routes/loginRouter');
+const registerRouter = require('./routes/registerRouter');
+const taxInvoiceLicenseRouter = require('./routes/taxInvoiceLicenseRouter');
+const taxInvoiceRepairRouter = require('./routes/taxInvoiceRepairRouter');
+const taxInvoiceSaleRouter = require('./routes/taxInvoiceSaleRouter');
 
 
 app.use(express.static('public'));
@@ -52,6 +56,12 @@ app.use('/saveDataCar',saveDataCar);
 app.use('/', showRepairIncome);
 app.use('/', showLicenseIncome);
 app.use('/', registrationBook);
+app.use('/login', loginRouter);
+app.use('/register', registerRouter);
+app.use('/taxInvoiceLicense', taxInvoiceLicenseRouter);
+app.use('/taxInvoiceRepair', taxInvoiceRepairRouter);
+app.use('/taxInvoiceSale', taxInvoiceSaleRouter);
+
 
 app.get('/', function (req, res) {
    res.sendFile(path.join(__dirname,'public', 'index.html'));
