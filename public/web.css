@@ -2,6 +2,9 @@ a {
     color: black;
 }
 
+a.aa{
+    color: white;
+}
 form {
     text-align: center;
 }
@@ -15,7 +18,8 @@ p.tel {
 }
 
 p.login {
-    padding-left: 14cm;
+    text-align: center;
+    /* padding-right: 14cm; */
 }
 
 p.bargain {
@@ -146,6 +150,11 @@ hr.top {
 
 .user {
     float: left;
+    width: 10vh;
+}
+
+.user2 {
+    /* float: left; */
     width: 10vh;
 }
 

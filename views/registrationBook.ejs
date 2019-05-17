@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+ 
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet"> <!--font-->
+
+    <title>ใบรับสมุดทะเบียน</title>
+
+    <script>
+        function nextTaxLicense() {
+            location.href = "taxinvoiceLicense.html";
+        }
+        function printData() {
+            window.print();
+            
+        }
+  </script>
+        
+</head>
+<body>
+  <section>
+        <div class="container">
+                <img class="logo" src="logo Chokthawee.png">  
+
+                <h1 >ใบรับสมุดทะเบียน</h1>
+                                                        
+                <br>
+
+                <div class="date">
+                    <label for="dates"><b>วันที่มารับสมุด :</b></label>
+                    <input type="date" name="day">
+                </div>
+            
+            <p class="all">บริษัท โชคทวีออโต้เซล จำกัด <br>โทร. 038-553092</p>
+            <p class="all">นามลูกค้า : คุณสายดุจ ดำทมิฬ &nbsp; เบอร์ติดต่อ : 092-7693145 <br>ทะเบียนรถ : ก123 </p> 
+ 
+            <table border="4" align="center" width="1500" id="myTable">
+                    <tr>
+                        <th>รายการ</th>
+                        <th>ราคา</th>
+                    </tr>
+                    <tbody>
+                     
+                    <tr>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    
+                </tbody>
+    
+    
+                </table> 
+            <br>
+            <br>
+            
+            <div style="float: left">
+                <input type="button" class="btnAll" onclick="nextTaxLicense()" value="ใบกำกับภาษี">
+            </div>
+            <div style="float: right">
+                <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
+            </div>
+           
+            <br>
+            <br>
+        </div>
+    </section>
+    
+</body>
+</html>
