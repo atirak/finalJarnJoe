@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="web.css">
+    <title>ใบเสร็จการซื้อ</title>
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logoChoktawee.png">
+                <center>ใบเสร็จการซื้อ</center>
+            </div>
+            <br>
+            <div class="date">
+                <label for="dates"><b>วันที่ :</b> <%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%></label>
+
+            </div>
+            <p class="all">บริษัท โชคทวีออโต้เซล จำกัด <br>โทร. 038-553092</p>
+            <p class="all">นามลูกค้า :
+                <%= BillBuy.name %>
+                    <%= BillBuy.lastname %> &nbsp; เบอร์ติดต่อ :
+                        <%= BillBuy.phonenumber %>
+            </p>
+
+            <table border="4" align=center width=1500>
+
+                <tr>
+                    <th>รายการ</th>
+                    <th>จำนวน</th>
+                    <th>ราคารวม</th>
+                </tr>
+                <tr>
+                    <td>
+                        <%=BillBuy.listItem%>
+                    </td>
+                    <td>
+                        <%=BillBuy.count%>
+                    </td>
+                    <td>
+                        <%=BillBuy.price.toLocaleString('en')%>
+                    </td>
+                </tr>
+
+            </table>
+            <p style="text-align: right"><strong>ราคารวมทั้งหมด : <%= BillBuy.price.toLocaleString('en') %> บาท</strong></p>
+            <br>
+            <br>
+            <h6 style="text-align:center">ขอบคุณที่ใช้บริการ</h6>
+            <br>
+
+            <div style="text-align: center">
+                <button type="button" class="btnAll" value="ใบกำกับภาษี"><a>ใบกำกับภาษี</a></button>
+                <button type="button" class="btnAll" onclick="printData()" value="พิมพ์"><a>พิมพ์</a></button>
+
+            </div>
+
+            <br>
+            <br>
+            <!--เว้นบรรทัด-->
+
+        </div>
+    </section>
+</body>
+<script>
+    function printData() {
+        window.print();
+    }
+</script>
+
+</html>

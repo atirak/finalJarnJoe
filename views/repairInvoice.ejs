@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+    <!--font-->
+    <link rel="stylesheet" type="text/css" href="web.css">
+    <!--เชื่อมไฟล์ css-->
+
+    <title>ใบแจ้งการซ่อม</title>
+
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logoChoktawee.png">
+                <center>ใบแจ้งการซ่อม</center>
+            </div>
+            <br>
+
+            <form action="/repairInvoice/post" method="POST">
+                <p class="bargain">
+                    ใบแจ้งการซ่อม ทะเบียนรถ <input type="text"> เมื่อวันที่ <%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%> &nbsp;
+                    <!--&nbsp คือ เว้นวรรค-->
+                </p>
+
+                <p class="bargain">
+                    &nbsp; สี
+                    <select name="color">
+                                                <option value="volvo">เลือก</option>
+                                                <option value="สีขาว">ขาว</option>
+                                                <option value="สีดำ">ดำ</option>
+                                                <option value="สีแดง">แดง</option>
+                                                <option value="สีน้ำเงิน">น้ำเงิน</option>
+                                                <option value="สีเหลือง">เหลือง</option>
+                                                <option value="สีเทา">เทา</option>
+                                                <option value="สีเขียว">เขียว</option>
+                                                <option value="สีส้ม">ส้ม</option>
+                                        </select> ยี่ห้อ <input type="text" name="brand"> &nbsp; ของคุณ <input type="text" placeholder="ชื่อจริง" name="name"> &nbsp;
+                    <input type="text" placeholder="นามสกุล" name="lastname"> &nbsp;
+                </p>
+
+                <p class="bargain">
+                    มีอาการ <input type="text2" name="state"> <br><br> โดยจะต้องซ่อมตามรายการดังนี้
+                </p>
+
+
+                <div class="row">
+                    <div class="column4">
+                        <input type="checkbox" name="listOilFilter" value="เปลี่ยนถ่ายน้ำมันเครื่อง">เปลี่ยนถ่ายน้ำมันเครื่อง<br>
+                        <input type="checkbox" name="listFilterMachine" value="กรองเครื่อง">กรองเครื่อง<br>
+                        <input type="checkbox" name="listAirCleaning" value="เติมน้ำยาแอร์">เติมน้ำยาแอร์<br>
+                    </div>
+                    <div class="column4">
+                        <input type="checkbox" name="listBrakeRepair" value="ซ่อมเบรก">ซ่อมเบรก<br>
+                        <input type="checkbox" name="listGrease" value="อัดจาระบี">อัดจาระบี<br>
+                        <input type="checkbox" name="listChangeTires" value="เปลี่ยนยาง">เปลี่ยนยาง<br>
+                    </div>
+                    <div class="column4">
+                        <input type="checkbox" name="listAirConditionerRepair" value="ซ่อมแอร์">ซ่อมแอร์<br>
+                        <input type="checkbox" name="listChangeWiperBlade" value="เปลี่ยนใบปัดน้ำฝน">เปลี่ยนใบปัดน้ำฝน<br>
+                        <input type="checkbox" name="listGasket" value="ประเก็น">ประเก็น<br>
+                    </div>
+                </div>
+                <br><br>
+
+                <div style="text-align: center">
+                    <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
+                    <input type="submit" class="btnAll" onclick="" value="บันทึก">
+                </div>
+                <br>
+
+            </form>
+
+
+        </div>
+    </section>
+
+</body>
+
+</html>
