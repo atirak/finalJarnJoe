@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="web.css">
+    <title>ใบกำกับภาษีการซ่อม</title>
+</head>
+<script>
+    function printData() {
+        window.print();
+    }
+</script>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <div class="UpperTitle">
+                <img class="logo" src="logoChoktawee.png">
+                <center>ใบกำกับภาษีการซ่อม</center>
+            </div>
+
+            <div class="boxmodel">
+                <div class="container">
+                    <div class="date">
+                        <label for="dates">
+                            <b>วันที่
+                                :</b><%= new Date().getDate();%>/<%= new Date().getMonth()+1;%>/<%= new Date().getFullYear();%>
+                        </label>
+                    </div>
+                    <p class="all">เลขที่ : 00753</p>
+                    <p class="all">บริษัท โชคทวีออโต้เซล จำกัด <br>โทร. 038-553092</p>
+                </div>
+            </div>
+
+            <table border="4" ALIGN=center width=1500>
+                <tr>
+                    <th>รายการ</th>
+                    <th>จำนวน</th>
+                    <th>ราคารวม</th>
+                </tr>
+                
+                <tr>
+                    <td><%= TaxInvoiceRepair.listItem %></td>
+                    <td><%= TaxInvoiceRepair.count %></td>
+                    <td><%= TaxInvoiceRepair.price.toLocaleString('en') %></td>
+                </tr>
+            </table>
+            <br>
+
+            <p style="text-align:right">
+                <strong> ราคารวม : <%= TaxInvoiceRepair.price.toLocaleString('en') %> บาท
+                    <br> ภาษี 3% : <%= (TaxInvoiceRepair.price*0.03).toLocaleString('en') %> บาท
+                    <br> ราคาสุทธิ : <%= (TaxInvoiceRepair.price+(TaxInvoiceRepair.price*0.03)).toLocaleString('en') %> บาท </strong>
+            </p>
+            <br>
+
+            <br>
+            <p style="text-align: center">
+                _______ลงชื่อลูกค้า_______ &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;_____ลงชื่อพนักงาน_____
+                <br>
+                (______________________) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;(_____________________)
+            </p>
+            <br>
+
+            <div style="text-align: center">
+                <input type="button" class="btnAll" value="กลับหน้าหลัก">
+                <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">
+            </div>
+            <br>
+    </section>
+</body>
+
+</html>
