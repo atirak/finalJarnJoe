@@ -6,7 +6,7 @@ const OrderBuy = require("../models/TRN_OrderBuy");
 router.route('/').get(function(req,res,next) {
 	OrderBuy.find(function(err,doc) {
     if (err) return next(err);
-    res.render('showBuyIncome',{OrderBuy:doc,a:a});
+    res.render('showBuyIncome',{OrderBuy:doc});
 	
 	});
 });
