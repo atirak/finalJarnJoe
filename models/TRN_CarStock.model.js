@@ -7,6 +7,7 @@ const TRN_CarStock = new Schema({
     color: { type: String },
     licensePlate: { type: String },
     yearofcar : { type: String },
+    status : { type: String },
     price : { type: String }
    
     },{

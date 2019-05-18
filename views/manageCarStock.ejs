@@ -72,6 +72,7 @@
                 </tr>
                 <tbody id="myTable">
                         <% for(var i=0; i < car.length; i++) { %>
+                            <%if (car[i].status == 'instock') { %>
                 <tr>
                     <td><%= car[i].licensePlate %></td>
                     <td><%= car[i].brand %></td>
@@ -82,6 +83,7 @@
                     <td><%= car[i].price.toLocaleString('en') %></td>
                     <td><a href="/manageCarStock/sell/<%= car[i]._id %>" class="btnAll" > เลือกเพื่อขาย   </a>
                 </tr>
+                <% } %>
                 <% } %>
             </tbody>
 

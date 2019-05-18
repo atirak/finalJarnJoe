@@ -32,12 +32,16 @@ CoinRouter.route('/').get(function (req, res) {
                     licensePlate:car.licensePlate,
                     price:car.price
                   });
+                  car.status = "sold out"
+                  car.save()
                   OrderSale.save()
                 res.render('bargain', { cus: user, emp: emp, car: car });
             });
         });
     });
 });
+
+
 
 CoinRouter.route('/bill').get(function (req, res) {
     Order.findOne({ID_OrderSale:id_order},function (err, BillBuy){
