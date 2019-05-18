@@ -18,6 +18,12 @@
     <link rel="stylesheet" type="text/css" href="web.css">
     <title>แสดงรายได้จากการขาย</title>
 
+    <script>
+        function backHome() {
+            location.href = "/home";
+        }
+    </script>
+
 </head>
 
 <body>
@@ -76,7 +82,7 @@
 
 
         <div style=" float: left">
-            <input type="button" class="btnAll" onclick="backProfit()" value="กลับ">
+            <input type="button" class="btnAll" onclick="backHome()" value="กลับ">
         </div>
         <div style="float: right">
             <input type="button" class="btnAll" onclick="printData()" value="พิมพ์">

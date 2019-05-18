@@ -16,7 +16,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit|Prompt">
     <link rel="stylesheet" type="text/css" href="web.css">
     <link href="https://fonts.googleapis.com/css?family=Kanit" rel="stylesheet">
+
     <title>แสดงรายได้จากการขาย</title>
+
+    <script>
+        function backHome() {
+            location.href = "/home";
+        }
+    </script>
 
 </head>
 
@@ -66,7 +73,7 @@
 
             <div class="row">
                 <div class="column" style="text-align: center">
-                    <a class="btnAll" href="/">กลับ</a>
+                    <input type="button" class="btnAll" onclick="backHome()" value="กลับ">
                 </div>
 
             </div>
