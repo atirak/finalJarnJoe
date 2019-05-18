@@ -24,7 +24,7 @@ dataCustomerSale.route('/create').get(function (req, res) {
    console.log(MST_customer);
    MST_customer.save()
      .then(MST_customer => {
-     res.redirect('/dataCustomerSale'); 
+     res.redirect('/saveDataCar'); 
      })
      .catch(err => {
      res.status(400).send("unable to save to database");

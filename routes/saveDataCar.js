@@ -23,7 +23,7 @@ saveDataCar.route('/create').get(function (req, res) {
    console.log(TRN_carstock );
    TRN_carstock .save()
      .then(TRN_carstock  => {
-     res.redirect('/saveDataCar'); 
+     res.redirect('/bargain'); 
      })
      .catch(err => {
      res.status(400).send("unable to save to database");

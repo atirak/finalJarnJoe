@@ -51,7 +51,7 @@
             <thead>
                 <tr>
                     <th>ทะเบียน</th>
-                    <th>วันที่</th>
+                    <th>ลูกค้า</th>
                     <th>จำนวนเงิน</th>
                 </tr>
             </thead>
@@ -60,10 +60,10 @@
                         
                 <tr>
                         <td>
-                                <%= OrderSale[i].ID_CarStock %>
+                                <%= OrderSale[i].licensePlate %>
                             </td>
                             <td>
-                                <%= OrderSale[i].date %>
+                                <%= OrderSale[i].nameCus %>
                             </td>
                             <td>
                                 <%= OrderSale[i].price %>
